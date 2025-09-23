@@ -5,67 +5,98 @@
 
 <h1 align="center">🔫🗡️ <span>NewWeaponDataset</span></h1>
 <p align="center">
-  <em>Multi-class object detection dataset for weapons & background negatives — tuned for small objects, surveillance, and cluttered scenes.</em>
+  <em>A high-quality, small-object-focused dataset for multi-class weapon detection (knife, pistol, long_gun) and hard negatives (no_weapon), curated from diverse day/night CCTV and handheld scenes with occlusions and clutter. Designed for robust surveillance models and research on tiny targets.</em>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Format-YOLOv5%2Fv8-1f77b4?style=for-the-badge" />
   <img src="https://img.shields.io/badge/License-MIT-6c757d?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Images-59.3k-2ca02c?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Instances-76.7k-d62728?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Hosted-Roboflow%20Universe-20c997?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Public-Yes-2ca02c?style=for-the-badge" />
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Train-82.76%25-228be6?style=flat-square" />
-  <img src="https://img.shields.io/badge/Valid-12.73%25-845ef7?style=flat-square" />
-  <img src="https://img.shields.io/badge/Test-4.51%25-15aabf?style=flat-square" />
-</p>
-
----
-
-## 🎯 Classes (with color chips)
-
-<p>
-  <img src="https://img.shields.io/badge/knife-13,010-e74c3c?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/long_gun-22,964-8e44ad?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/no_weapon-12,141-95a5a6?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/pistol-28,590-f1c40f?style=for-the-badge" />
-</p>
-
-> **Totals:** 76,705 instances across **59,305** images.  
-> **Class distribution chart:** `./assets/class_distribution.png`  
-> (Current local path: `/home/constantin/Doctorat/YoloLib/Utils/Scripts/merged_dataset/class_distribution.png` — copy it into `./assets/` to display above.)
+> **Availability:** Public on **Roboflow Universe** — add your link here: **`<INSERT_ROBOFLOW_UNIVERSE_LINK>`**
 
 ---
 
 ## 📦 Dataset Snapshot
 
-- **Images:** 59,305  
-- **Instances:** 76,705  
-- **Null/empty labels:** 0  
-- **Split mix:**
-
-
-
-<details>
-<summary><b>🔎 Per-split counts</b></summary>
-
-**Train (49,079 images)**  
-- knife: 10,511 • long_gun: 19,273 • no_weapon: 10,161 • pistol: 23,507
-
-**Valid (7,552 images)**  
-- knife: 1,813 • long_gun: 2,750 • no_weapon: 1,324 • pistol: 3,843
-
-**Test (2,674 images)**  
-- knife: 686 • long_gun: 941 • no_weapon: 656 • pistol: 1,240
-</details>
+| Key                  | Value                              |
+|----------------------|------------------------------------|
+| Images               | **59,305**                         |
+| Instances            | **76,705**                         |
+| Null/empty labels    | **0**                              |
+| Classes              | `knife`, `long_gun`, `no_weapon`, `pistol` |
+| Format               | YOLO (`class x_center y_center width height`, normalized) |
+| License              | MIT                                |
+| Focus                | Small objects, occlusion, motion blur, varied lighting |
+| Hosting              | Roboflow Universe (public)         |
 
 ---
 
-## 🗂️ Structure & Format
+## 🔀 Split Mix
 
-- **Annotation format (YOLO):**  
-`class_id x_center y_center width height` (normalized to [0, 1])
+| Split | Images | % of total |
+|------:|-------:|-----------:|
+| Train | 49,079 | **82.76%** |
+| Valid | 7,552  | **12.73%** |
+| Test  | 2,674  | **4.51%**  |
+| **Total** | **59,305** | **100%** |
 
-- **Class index map:**
+---
 
+## 🏷️ Class Totals (All Splits)
+
+| Class      | Instances | Share |
+|------------|----------:|------:|
+| knife      | 13,010    | 16.96% |
+| long_gun   | 22,964    | 29.94% |
+| no_weapon  | 12,141    | 15.83% |
+| pistol     | 28,590    | 37.27% |
+| **Total**  | **76,705**| **100%** |
+
+---
+
+## 📊 Per-Split Class Counts
+
+| Class     | Train  | Valid | Test | **Total** |
+|-----------|-------:|------:|-----:|----------:|
+| knife     | 10,511 | 1,813 | 686  | **13,010** |
+| long_gun  | 19,273 | 2,750 | 941  | **22,964** |
+| no_weapon | 10,161 | 1,324 | 656  | **12,141** |
+| pistol    | 23,507 | 3,843 | 1,240| **28,590** |
+
+---
+
+## 🗂️ Class Index Map
+
+| Index | Class     |
+|------:|-----------|
+| 0     | knife     |
+| 1     | long_gun  |
+| 2     | no_weapon |
+| 3     | pistol    |
+
+> **Annotation format (YOLO):** `class_id x_center y_center width height` (all values normalized to `[0,1]`).
+
+---
+
+## 🧪 Tips
+
+- For tiny targets, consider larger `imgsz` (e.g., 960–1280), tuned augmentations, and careful NMS thresholds.
+- Include `no_weapon` in validation metrics to track false positives in cluttered backgrounds.
+
+---
+
+## 📈 Visuals
+
+- Class distribution chart: `./assets/class_distribution.png`  
+  _(Copy from your local path `/home/constantin/Doctorat/YoloLib/Utils/Scripts/merged_dataset/class_distribution.png` into `./assets/` to render here.)_
+
+---
+
+## 🚀 Quick Start (YOLOv8)
+
+```bash
+pip install ultralytics
+yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=50 imgsz=640
