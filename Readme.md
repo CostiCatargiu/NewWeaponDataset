@@ -135,6 +135,67 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 - **Index map:**
 
 
+<div align="center">
+
+# 🔎 YOLOv12s — Small-Object Focused Variant (P2–P5 + loss tweaks)
+
+<sub><em>A compact introduction to what changed, why we changed it, and how it helps tiny objects.</em></sub>
+
+</div>
+
+> **Why this exists**  
+> Small objects often disappear at standard detection strides (P3–P5). We introduce a P2–P5 head and loss-function tweaks to increase supervision and signal quality on tiny targets—without derailing your existing YOLOv12s workflow.
+
+---
+
+## ✨ What we compared
+
+- **Baseline:** original **YOLOv12s** with a **P3–P5** detection head and **Ultralytics default loss**.  
+- **Custom:** **YOLOv12s (P2–P5)** with architectural upgrades **+ small-object-aware loss**.
+
+---
+
+## 🧠 Key architectural changes (P2–P5)
+
+- **Add P2 head (stride 1/4):** exposes tiny objects to higher spatial resolution.
+- **Strengthen P2 branch:** **256-channel Conv/A2C2f** blocks to preserve fine texture/edges.
+- **Four heads instead of three:** **P2, P3, P4, P5** (vs. baseline P3–P5) for better scale specialization.
+- **Post-processing nudge:** in dense tiny-object scenes, consider a **lower NMS IoU**.
+
+---
+
+## 📉 Loss-function intent (small-object aware)
+
+- **Classification:** quality-aware weighting so small positives aren’t drowned out by easy negatives.  
+- **Box regression:** **area-aware emphasis** to keep tiny boxes from being underfit.
+
+---
+
+## 🔬 Baseline vs Custom (at a glance)
+
+| Aspect | Baseline YOLOv12s | Custom YOLOv12s (this work) |
+| --- | --- | --- |
+| Detect heads | **P3–P5** | **P2–P5** |
+| Tiny-object exposure | Limited (stride ≥ 1/8) | **High** (adds stride **1/4** grid) |
+| P2 branch capacity | — | **256-ch Conv/A2C2f** for fine detail |
+| Loss focus | Ultralytics default | **Small-object-aware** (quality + area cues) |
+| NMS guidance | Default | **Lower IoU** recommended in dense scenes |
+
+---
+
+## ⚙️ Practical knobs
+
+- **NMS IoU:** try **0.50–0.55** when tiny instances cluster densely.  
+- **Confidence threshold:** tune slightly **lower** if recall on small objects matters most.  
+- **Augmentations:** mosaic / random scale can help tiny GT land on **P2/P3** (watch for label noise).
+
+---
+
+> **TL;DR**  
+> We compared the original YOLOv12s to a custom P2–P5 variant and small-object-aware loss. The changes are targeted, practical, and aimed at **raising AP\_S** with modest compute overhead—especially in crowded, tiny-object datasets.
+
+
+
 ### Tiny-object settings: P2–P5 vs P3–P5 (single table)
 
 | Aspect             | P2–P5 (yours)                            | P3–P5 (baseline)  | Why it helps / guidance                           | Trade-offs / notes                      |
