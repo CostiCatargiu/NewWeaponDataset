@@ -116,7 +116,17 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
          alt="class_distribution" width="100%">
   </p>
 </details>
- 
+
+<details>
+  <summary>📊 Training Setup - click to expand </summary>
+
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/ef61fcfc-5545-40ef-881b-d1cb6b2fcb23"
+         alt="class_distribution" width="100%">
+  </p>
+</details>
+
+
 ---
 
 ## 🗂️ Structure & Labels
