@@ -176,16 +176,32 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 | Aug synergy        | Strong with mosaic & random scale ↑      | Moderate          | Upscaled tiny GT land on P2/P3                    | Watch label noise with heavy aug        |
 
 
-### 🔧 Loss: Modified vs Ultralytics Baseline
+## 🔧 Loss: Modified vs Ultralytics Baseline
 
-| Component                 | Modified (yours)                                                                 | Ultralytics baseline     | Rationale / effect                                              | Notes / tips                                                                 |
-|--------------------------|-----------------------------------------------------------------------------------|--------------------------|------------------------------------------------------------------|-------------------------------------------------------------------------------|
-| Assigner (TaskAligned)   | `topk=25`, `beta=4.0`                                                             | `topk=10`, `beta=6.0`    | More positives + softer gate → **higher small-box recall**       | Tune if FPs rise: try `topk=20–24`, `beta≈5`                                  |
-| Box weighting            | **Size-aware**: inverse-area ⨉ α + score ⨉ (1−α), **α anneals** over epochs       | Score-only               | Emphasizes tiny boxes early; balances later                     | Normalize weights; `sqrt(area)` can improve stability                         |
-| Auxiliary center loss    | **L1 on centers** applied **only to small GT**, with **decaying weight**          | —                        | Faster center alignment when `W×H` is a few px                  | Compute “smallness” per-anchor stride                                         |
-| Loss clipping            | **Epoch-scheduled clipping** for **IoU/DFL** terms                                | —                        | Reduces instability/spikes in dense tiny targets                | Consider additional grad-norm clip (e.g., `5.0`)                               |
-| Detection CLS            | **BCE** (default). Option: **Focal** if imbalance persists                        | **BCE**                  | Keeps baseline behavior; switch to Focal for small-class recall | Focal suggestion: `γ≈1.5`, `α≈0.25`                                           |
-| OBB CLS                  | **Focal**                                                                          | **BCE**                  | Better robustness to class imbalance                            | Slightly slower; tune `γ/α`                                                   |
+- **Assigner (TaskAligned)** — `topk=25`, `beta=4.0` (baseline `topk=10`, `beta=6.0`).  
+  *Why:* increases positives and softens the gate → higher recall on tiny boxes.  
+  *Tip:* if FPs rise, try `topk=20–24`, `beta≈5`.
+
+- **Size-aware box weighting** — blend inverse area and classification score:  
+  `w = α·(1/area) + (1−α)·score`, with **α annealed** over epochs.  
+  *Why:* emphasizes very small boxes early, then balances with score later.  
+  *Tip:* normalize weights; `sqrt(area)` can improve stability.
+
+- **Auxiliary center L1** — applied **only to small GT** with a **decaying weight**.  
+  *Why:* speeds up center alignment when `W×H` is just a few pixels.  
+  *Tip:* compute “smallness” **per-anchor stride**.
+
+- **Epoch-scheduled clipping (IoU/DFL)**.  
+  *Why:* reduces loss spikes/instability in dense tiny-object scenes.  
+  *Tip:* optional grad-norm clip (e.g., `5.0`).
+
+- **Detection classification (CLS)** — keep **BCE** by default; switch to **Focal** if class imbalance persists.  
+  *Tip:* start with **Focal** `γ≈1.5`, `α≈0.25` if small-class recall is low.
+
+- **OBB classification** — use **Focal**.  
+  *Why:* more robust to class imbalance.  
+  *Cost:* slightly slower; tune `γ/α` as needed.
+
 
 
 ### 📦 Loss & Assigner Tweaks (tiny-object oriented)
