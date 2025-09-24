@@ -240,3 +240,29 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 | Long Gun  | 698 (0.746) | 814 (0.781)  | Custom |
 | No Weapon | 245 (0.731) | 386 (0.740)  | Custom |
 | Pistol    | 936 (0.761) | 1111 (0.787) | Custom |
+
+## 3) Detection Accuracy per Class (TP/FP/FN, P/R, F1)
+
+| Class     | Original TP/FP/FN | Original P/R | Original F1 | Custom TP/FP/FN | Custom P/R | Custom F1 | Winner (F1) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Knife     | 487/38/199  | 0.93 / 0.71 | 0.805 | 539/54/147  | 0.91 / 0.79 | 0.846 | Custom |
+| Long Gun  | 648/50/293  | 0.93 / 0.69 | 0.792 | 745/69/196  | 0.92 / 0.79 | 0.850 | Custom |
+| No Weapon | 207/38/449  | 0.84 / 0.32 | 0.463 | 302/84/354  | 0.78 / 0.46 | 0.579 | Custom |
+| Pistol    | 882/54/358  | 0.94 / 0.71 | 0.809 | 1020/91/220 | 0.92 / 0.82 | 0.867 | Custom |
+
+---
+
+## 4) Overall Metrics
+
+| Metric                         | Original | Custom |
+| --- | --- | --- |
+| Precision                      | 0.9251  | 0.8974 |
+| Recall                         | 0.6313  | 0.7397 |
+| F1 (from overall P/R)          | 0.750   | 0.811  |
+| False Positives (FPs)          | 180     | 298    |
+| False Negatives (FNs)          | 1299    | 917    |
+| False Positive Rate            | 7.49%   | 10.26% |
+| Avg FP Confidence              | 0.7075  | 0.7145 |
+| Total Predictions > threshold  | 2404    | 2904   |
+| Average Prediction Confidence  | 0.7503  | 0.7787 |
+
