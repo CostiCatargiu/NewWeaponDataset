@@ -1,11 +1,17 @@
-<!-- Optional banner (replace with your own image in ./assets/) -->
+<!-- Optional banner -->
 <p align="center">
   <img src="./assets/hero_banner.png" alt="NewWeaponDataset" width="85%">
 </p>
 
-<h1 align="center">🔫🗡️ <span>NewWeaponDataset</span></h1>
+<h1 align="center">🔫🗡️ NewWeaponDataset</h1>
 <p align="center">
-  <em>A high-quality, small-object-focused dataset for multi-class weapon detection (knife, pistol, long_gun) and hard negatives (no_weapon), curated from diverse day/night CCTV and handheld scenes with occlusions and clutter. Designed for robust surveillance models and research on tiny targets.</em>
+  <em>Public, small-object-focused dataset for multi-class weapon detection (knife, pistol, long_gun) and hard negatives (no_weapon), curated from diverse day/night CCTV & handheld scenes with occlusions and clutter.</em>
+</p>
+
+<p align="center">
+  <a href="<INSERT_ROBOFLOW_UNIVERSE_LINK>">
+    <img src="https://img.shields.io/badge/Open%20in%20Roboflow-000?logo=roboflow&logoColor=white&style=for-the-badge" alt="Open in Roboflow">
+  </a>
 </p>
 
 <p align="center">
@@ -15,88 +21,70 @@
   <img src="https://img.shields.io/badge/Public-Yes-2ca02c?style=for-the-badge" />
 </p>
 
-> **Availability:** Public on **Roboflow Universe** — add your link here: **`<INSERT_ROBOFLOW_UNIVERSE_LINK>`**
+---
+
+## ⚡ At a Glance
+
+<table>
+  <tr>
+    <td><b>🖼️ Images</b></td>
+    <td><b>59,305</b></td>
+  </tr>
+  <tr>
+    <td><b>🔢 Instances</b></td>
+    <td><b>76,705</b> (0 empty labels)</td>
+  </tr>
+  <tr>
+    <td><b>🏷️ Classes</b></td>
+    <td><code>knife</code>, <code>long_gun</code>, <code>no_weapon</code>, <code>pistol</code></td>
+  </tr>
+  <tr>
+    <td><b>🧰 Format</b></td>
+    <td>YOLO: <code>class x_center y_center width height</code> (normalized)</td>
+  </tr>
+  <tr>
+    <td><b>📜 License</b></td>
+    <td>MIT</td>
+  </tr>
+  <tr>
+    <td><b>☁️ Hosting</b></td>
+    <td><a href="<INSERT_ROBOFLOW_UNIVERSE_LINK>">Roboflow Universe (Public)</a></td>
+  </tr>
+</table>
 
 ---
 
-## 📦 Dataset Snapshot
+## 🧪 Split Mix
 
-| Key                  | Value                              |
-|----------------------|------------------------------------|
-| Images               | **59,305**                         |
-| Instances            | **76,705**                         |
-| Null/empty labels    | **0**                              |
-| Classes              | `knife`, `long_gun`, `no_weapon`, `pistol` |
-| Format               | YOLO (`class x_center y_center width height`, normalized) |
-| License              | MIT                                |
-| Focus                | Small objects, occlusion, motion blur, varied lighting |
-| Hosting              | Roboflow Universe (public)         |
+<p>
+  <img src="https://img.shields.io/badge/Train-82.76%25-228be6?style=flat-square" />
+  <img src="https://img.shields.io/badge/Valid-12.73%25-845ef7?style=flat-square" />
+  <img src="https://img.shields.io/badge/Test-4.51%25-15aabf?style=flat-square" />
+</p>
 
----
-
-## 🔀 Split Mix
-
-| Split | Images | % of total |
-|------:|-------:|-----------:|
-| Train | 49,079 | **82.76%** |
-| Valid | 7,552  | **12.73%** |
-| Test  | 2,674  | **4.51%**  |
-| **Total** | **59,305** | **100%** |
+<pre>
+Train  [███████████████████████████████████████░░] 82.76% (49,079)
+Valid  [██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 12.73% (7,552)
+Test   [███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]  4.51% (2,674)
+</pre>
 
 ---
 
-## 🏷️ Class Totals (All Splits)
+## 🎯 Class Mix (All Splits)
 
-| Class      | Instances | Share |
-|------------|----------:|------:|
-| knife      | 13,010    | 16.96% |
-| long_gun   | 22,964    | 29.94% |
-| no_weapon  | 12,141    | 15.83% |
-| pistol     | 28,590    | 37.27% |
-| **Total**  | **76,705**| **100%** |
+<p>
+  <img src="https://img.shields.io/badge/knife-13,010_(16.96%25)-e74c3c?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/long_gun-22,964_(29.94%25)-8e44ad?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/no_weapon-12,141_(15.83%25)-95a5a6?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/pistol-28,590_(37.27%25)-f1c40f?style=for-the-badge" />
+</p>
 
----
-
-## 📊 Per-Split Class Counts
-
-| Class     | Train  | Valid | Test | **Total** |
-|-----------|-------:|------:|-----:|----------:|
-| knife     | 10,511 | 1,813 | 686  | **13,010** |
-| long_gun  | 19,273 | 2,750 | 941  | **22,964** |
-| no_weapon | 10,161 | 1,324 | 656  | **12,141** |
-| pistol    | 23,507 | 3,843 | 1,240| **28,590** |
+> Class distribution chart: `./assets/class_distribution.png`  
+> (Copy from `/home/constantin/Doctorat/YoloLib/Utils/Scripts/merged_dataset/class_distribution.png` into `./assets/`.)
 
 ---
 
-## 🗂️ Class Index Map
+## 🗂️ Structure & Labels
 
-| Index | Class     |
-|------:|-----------|
-| 0     | knife     |
-| 1     | long_gun  |
-| 2     | no_weapon |
-| 3     | pistol    |
-
-> **Annotation format (YOLO):** `class_id x_center y_center width height` (all values normalized to `[0,1]`).
-
----
-
-## 🧪 Tips
-
-- For tiny targets, consider larger `imgsz` (e.g., 960–1280), tuned augmentations, and careful NMS thresholds.
-- Include `no_weapon` in validation metrics to track false positives in cluttered backgrounds.
-
----
-
-## 📈 Visuals
-
-- Class distribution chart: `./assets/class_distribution.png`  
-  _(Copy from your local path `/home/constantin/Doctorat/YoloLib/Utils/Scripts/merged_dataset/class_distribution.png` into `./assets/` to render here.)_
-
----
-
-## 🚀 Quick Start (YOLOv8)
-
-```bash
-pip install ultralytics
-yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=50 imgsz=640
+- **Annotation format:** `class_id x_center y_center width height` (all normalized to `[0,1]`)
+- **Index map:**
