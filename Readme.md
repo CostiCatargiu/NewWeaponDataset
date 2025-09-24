@@ -109,7 +109,7 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 
 
 <details>
-  <summary>📊 Class distribution chart (click to expand)</summary>
+  <summary>📊 Class distribution chart - click to expand </summary>
 
   <p align="center">
     <img src="https://github.com/user-attachments/assets/5b18d380-a33e-47e3-aadd-eb3769f93447"
