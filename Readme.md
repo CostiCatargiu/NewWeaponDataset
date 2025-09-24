@@ -175,3 +175,19 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 | Best with          | Small, dense, crowded datasets           | Medium/large objects | Matches receptive field to object size         | Try lower NMS IoU 0.50–0.55            |
 | Aug synergy        | Strong with mosaic & random scale ↑      | Moderate          | Upscaled tiny GT land on P2/P3                    | Watch label noise with heavy aug        |
 
+
+
+### 📦 Loss & Assigner Tweaks (tiny-object oriented)
+
+| Aspect                | Modified (yours)                                       | Baseline           | Effect on tiny objs                                      | Trade-offs / tips                                                                 |
+|-----------------------|--------------------------------------------------------|--------------------|----------------------------------------------------------|-----------------------------------------------------------------------------------|
+| Assigner top-k / β    | `topk=25, β=4.0`                                       | `topk=10, β=6.0`   | More positives & softer gate → higher recall             | May add noisy positives; try `topk=20–24`, `β≈5` if FPs rise                      |
+| Box weighting         | Inverse-area × (α) + score × (1-α), α anneals          | Score-only         | Prioritizes small boxes early, balances later            | Normalize weights; consider `sqrt(area)` for stability                            |
+| Center aux loss       | L1 on centers for small GT (decay)                     | —                  | Faster center alignment when `W×H` is a few px           | Compute smallness per-anchor stride                                               |
+| Loss clipping         | Epoch-scheduled caps for IoU/DFL                       | —                  | Tames spikes in tiny crowded scenes                      | Also consider grad-norm clip (e.g., `5.0`)                                        |
+| DFL details           | Size-aware weighting                                   | Standard DFL       | Stabilizes edge bins for small boxes                     | Keep `reg_max` consistent with head                                               |
+| CLS loss (detect)     | BCE (unchanged; option: **Focal**)                     | BCE                | —                                                        | Use Focal (`γ≳1.5`, `α≈0.25`) if small-class recall is low                        |
+| CLS loss (OBB)        | **Focal**                                              | BCE                | Better imbalance handling                                | Slightly slower; tune `γ/α`                                                       |
+| Smallness threshold   | `(24 / stride)^2` (per-anchor)                          | —                  | Targets truly tiny instances                             | Use **per-anchor** threshold; avoid relying only on a global min stride           |
+
+
