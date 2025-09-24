@@ -266,3 +266,28 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 | Total Predictions > threshold  | 2404    | 2904   |
 | Average Prediction Confidence  | 0.7503  | 0.7787 |
 
+
+## ✅ Conclusion
+
+**TL;DR:** The custom **YOLOv12s (P2–P5 + loss tweaks)** delivers **meaningfully higher recall and F1**—especially on small, crowded targets—at the cost of a modest **precision** drop due to more FPs.
+
+### What the numbers say
+- **Confidence shift to higher bands:** more hits in **0.8–0.9** and even **0.9–1.0** vs. baseline.
+- **Per-class gains across the board:** F1 improves for **Knife, Long Gun, No Weapon, Pistol** (largest jump on *No Weapon*).
+- **Overall metrics:**
+  - **Recall:** **0.631 → 0.740** (↑ ~11 pts), **FNs:** **1299 → 917** (−382).
+  - **F1:** **0.750 → 0.811** (↑ ~6 pts).
+  - **Precision:** **0.925 → 0.897** (↓ ~2.8 pts), **FPs:** **180 → 298** (↑ 118).
+
+### How to read this
+- If **missing small objects is costly** (safety/forensics/surveillance), the **custom model is preferable**: it finds more true positives and produces more high-confidence detections.
+- If your use case is **precision-critical** with few small targets, the **baseline** may remain competitive out-of-the-box.
+
+### Recommended knobs to balance FPs
+- **NMS IoU:** try **0.50–0.55** (especially in dense scenes).
+- **Confidence thresholds:** raise slightly or set **per-class** thresholds.
+- **Assigner sensitivity:** if FPs persist, try `topk=20–24`, `beta≈5`.
+- Keep augmentations reasonable to avoid label noise on tiny objects.
+
+> **Bottom line:** P2–P5 + small-object-aware loss **consistently improves tiny-object recall and F1**. With light post-processing tuning, you can recover much of the precision while keeping the recall gains.
+
