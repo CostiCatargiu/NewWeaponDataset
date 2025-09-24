@@ -178,6 +178,24 @@ Real deployments are unforgiving: weapons often appear **tiny** (distance), **pa
 
 ---
 
+### P2–P5 vs P3–P5 (baseline)
+
+| Aspect | P2–P5 (yours) | P3–P5 (baseline) | Why it helps tiny objects | Trade-offs / notes |
+| --- | --- | --- | --- | --- |
+| Output strides | P2 (1/4), P3 (1/8), P4 (1/16), P5 (1/32) | P3–P5 only | High-res P2 grid covers very small boxes | More memory/compute; more boxes for NMS |
+| P2 pathway | Upsample + concat with early C3k2 | — | Preserves fine edges/texture lost at downsampling | Ensure BN/act stats are stable |
+| Head width near P2 | 256-ch Conv/A2C2f | Typically 192–256 | Extra capacity for minute cues | Slight latency/VRAM increase |
+| # Detect heads | 4 (P2–P5) | 3 (P3–P5) | More scale-specialization | Heavier training; tune |
+
+### Behavior & training notes
+
+| Aspect | P2–P5 (yours) | P3–P5 (baseline) | Why / guidance | conf/NMS |
+| --- | --- | --- | --- | --- |
+| AP_S (tiny) | Usually higher | Lower | Denser supervision at small strides | Potential FP rise in clutter |
+| Best with | Small, dense, crowded datasets | Medium/large objects | Matches receptive field to object size | Try lower NMS IoU 0.50–0.55 |
+| Aug synergy | Strong with mosaic & random scale ↑ | Moderate | Upscaled tiny GT land on P2/P3 | Watch label noise with heavy aug |
+
+
 <details>
   <summary><b>🔧 Reproduce (pseudo-config)</b> — click to expand</summary>
 
