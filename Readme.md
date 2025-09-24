@@ -155,13 +155,12 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 
 ---
 
-## 🧠 Key architectural changes (P2–P5)
+## 🧠 Key architectural changes (P2–P5 head vs standard P3–P5)
 
-1) Architecture: P2–P5 head vs standard P3–P5
-    • Add a P2 head (stride 1/4) so tiny objects are observed at higher spatial resolution.
-    • Strengthen the P2 branch with 256‑channel Conv/A2C2f blocks to keep fine detail.
-    • Use four detection heads (P2, P3, P4, P5) instead of three (P3–P5).
-    • Slightly adjust post-processing: consider lower NMS IoU for dense tiny objects.
+- Add a **P2 head (stride 1/4)** so tiny objects are observed at higher spatial resolution.
+- **Strengthen the P2 branch** with **256-channel Conv/A2C2f** blocks to keep fine detail.
+- Use **four detection heads (P2, P3, P4, P5)** instead of three (**P3–P5**).
+- **Slightly adjust post-processing:** consider **lower NMS IoU** for dense tiny objects.
 
 
 ### Tiny-object settings: P2–P5 vs P3–P5 (single table)
