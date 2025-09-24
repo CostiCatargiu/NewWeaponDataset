@@ -85,9 +85,8 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
   <img src="https://img.shields.io/badge/pistol-28,590_(37.27%25)-f1c40f?style=for-the-badge" />
 </p>
 
-> Class distribution chart: `./assets/class_distribution.png`  
-> (Copy from `/home/constantin/Doctorat/YoloLib/Utils/Scripts/merged_dataset/class_distribution.png` into `./assets/`.)
-
+> Class distribution chart:  <img width="1000" height="600" alt="class_distribution" src="https://github.com/user-attachments/assets/5b18d380-a33e-47e3-aadd-eb3769f93447" />
+ 
 ---
 
 ## 🗂️ Structure & Labels
