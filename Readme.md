@@ -9,8 +9,11 @@
 </p>
 
 <p align="center">
-  <a href="<INSERT_ROBOFLOW_UNIVERSE_LINK>">
-    <img src="https://img.shields.io/badge/Open%20in%20Roboflow-000?logo=roboflow&logoColor=white&style=for-the-badge" alt="Open in Roboflow">
+  <a href="https://universe.roboflow.com/gundetectiondataset/nogun/dataset/2">
+    <img src="https://img.shields.io/badge/Open%20NoGun%20Dataset-000?logo=roboflow&logoColor=white&style=for-the-badge" alt="Open NoGun Dataset on Roboflow">
+  </a>
+  <a href="https://app.roboflow.com/gundetectiondataset/weapondataset-oi2g3/8">
+    <img src="https://img.shields.io/badge/Open%20WeaponDataset%20v8-000?logo=roboflow&logoColor=white&style=for-the-badge" alt="Open WeaponDataset v8 on Roboflow">
   </a>
 </p>
 
@@ -48,7 +51,10 @@
   </tr>
   <tr>
     <td><b>☁️ Hosting</b></td>
-    <td><a href="<INSERT_ROBOFLOW_UNIVERSE_LINK>">Roboflow Universe (Public)</a></td>
+    <td>
+      <a href="https://universe.roboflow.com/gundetectiondataset/nogun/dataset/2">Roboflow Universe: NoGun</a> &nbsp;•&nbsp;
+      <a href="https://app.roboflow.com/gundetectiondataset/weapondataset-oi2g3/8">Roboflow App: WeaponDataset v8</a>
+    </td>
   </tr>
 </table>
 
