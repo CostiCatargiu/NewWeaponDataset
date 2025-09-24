@@ -86,6 +86,18 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 </p>
 
 <details>
+  <summary>📷 Dataset examples (knife • pistol • long_gun) — click to expand</summary>
+
+
+  <p align="center">
+    <img src="![val_batch0_labels](https://github.com/user-attachments/assets/af5b7f23-f809-404d-8da0-17ddc436f894)"   alt="Example: knife"     width="32%" />
+    <img src="![val_batch1_labels](https://github.com/user-attachments/assets/b0805ccc-09e6-4167-abcb-35a583532762)"  alt="Example: pistol"    width="32%" />
+    <img src="![val_batch2_labels](https://github.com/user-attachments/assets/dbab2e81-8b7b-45b4-be47-50eb64689d9d)" alt="Example: long_gun"  width="32%" />
+  </p>
+</details>
+
+
+<details>
   <summary>📊 Class distribution chart (click to expand)</summary>
 
   <p align="center">
