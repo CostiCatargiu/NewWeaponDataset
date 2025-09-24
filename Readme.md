@@ -135,115 +135,15 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 - **Index map:**
 
 
+### Tiny-object settings: P2–P5 vs P3–P5 (single table)
 
-
-## 📈 Model Comparison — Small-Object-Optimized YOLO vs Baseline
-
-### 🎯 Why we built and compared these models
-
-Real deployments are unforgiving: weapons often appear **tiny** (distance), **partially occluded**, and under **low-light / motion blur**. Our baseline models missed many such cases, while “look-alikes” (phones, tools, hands, reflections) inflated false positives. We therefore built a **small-object-optimized** variant to raise tiny-object recall without sacrificing practical latency.  
-**Observed benefits:** more hits on distant/occluded weapons, better tolerance in noisy frames, and fewer spurious alerts after modest threshold tuning—with only a modest compute/VRAM increase from an extra detection head (P2).  
-
----
-
-### A) What changed (at a glance)
-
-| Aspect | Small-Object Optimized (ours) | Baseline | Why it helps / Notes |
-|---|---|---|---|
-| **Detector heads** | **P2–P5 (4 heads)** incl. **P2 @ 1/4 stride** | P3–P5 (3 heads) | Higher-res grid improves coverage for very small boxes; expect more boxes for NMS and a small latency/VRAM increase. :contentReference[oaicite:0]{index=0} |
-| **P2 pathway** | Upsample + concat with early features (e.g., C3k2), **~256-ch** blocks | — | Preserves fine texture lost at downsampling; gives the head extra capacity for minute cues. :contentReference[oaicite:1]{index=1} |
-| **Post-processing** | NMS IoU **≈ 0.50–0.55**, confidence **+0.02** vs baseline | Default | Curbs false positives in dense/cluttered scenes; tune per dataset. :contentReference[oaicite:2]{index=2} |
-| **Where it shines** | Small, dense, crowded data; tiny GT | Medium/large objects | Denser supervision at small strides → higher AP on small objects; watch FP rise in clutter and adjust thresholds. :contentReference[oaicite:3]{index=3} |
-
----
-
-### B) Losses & Training (how we trained it)
-
-- **Assigner (TaskAligned):** raise positives for tiny GT → **top-k ≈ 24–25, β ≈ 4–5**. If FPs creep up, reduce top-k or raise β slightly. :contentReference[oaicite:4]{index=4}  
-- **Size-aware box weighting:** blend **inverse-area** with score; **α anneals** over epochs (prioritize tiny boxes early, balance later). Normalize weights. :contentReference[oaicite:5]{index=5}  
-- **Aux center loss (small-only):** light **L1(center)** with a decaying weight to speed alignment when W×H is just a few px. :contentReference[oaicite:6]{index=6}  
-- **Stability:** epoch-scheduled **clipping** for IoU/DFL; consider **grad-norm clip ≈ 5.0**. Keep DFL **reg_max** consistent with the head. :contentReference[oaicite:7]{index=7}  
-- **CLS loss:** BCE (default). If imbalance persists, try **Focal(γ≈1.5, α≈0.25)**. Define “smallness” per anchor: **(24 / stride)²**. :contentReference[oaicite:8]{index=8}  
-- **Augment & schedule:** random scale **~0.5–1.8**, keep mosaic but monitor label noise; slightly longer warmup; **cosine LR** with lower final LR. :contentReference[oaicite:9]{index=9}  
-
----
-
-### C) Practical knobs that worked
-
-- **Assigner:** start **top-k=24**, **β=5.0** if FPs rise.  
-- **NMS/Conf:** **IoU 0.50–0.55**, **conf +0.02** vs baseline (curbs clutter FPs).  
-- **Center-L1 weight:** **0.03 → 0.01** over the first ~35 epochs.  
-- **Aug scale:** **0.5–1.8**; keep mosaic if labels are clean.  
-- **Eval:** always report **AP on small objects** separately; track **FP vs object area**. :contentReference[oaicite:10]{index=10}  
-
----
-
-### P2–P5 vs P3–P5 (baseline)
-
-| Aspect | P2–P5 (yours) | P3–P5 (baseline) | Why it helps tiny objects | Trade-offs / notes |
-| --- | --- | --- | --- | --- |
-| Output strides | P2 (1/4), P3 (1/8), P4 (1/16), P5 (1/32) | P3–P5 only | High-res P2 grid covers very small boxes | More memory/compute; more boxes for NMS |
-| P2 pathway | Upsample + concat with early C3k2 | — | Preserves fine edges/texture lost at downsampling | Ensure BN/act stats are stable |
-| Head width near P2 | 256-ch Conv/A2C2f | Typically 192–256 | Extra capacity for minute cues | Slight latency/VRAM increase |
-| # Detect heads | 4 (P2–P5) | 3 (P3–P5) | More scale-specialization | Heavier training; tune |
-
-### Behavior & training notes
-
-| Aspect | P2–P5 (yours) | P3–P5 (baseline) | Why / guidance | conf/NMS |
-| --- | --- | --- | --- | --- |
-| AP_S (tiny) | Usually higher | Lower | Denser supervision at small strides | Potential FP rise in clutter |
-| Best with | Small, dense, crowded datasets | Medium/large objects | Matches receptive field to object size | Try lower NMS IoU 0.50–0.55 |
-| Aug synergy | Strong with mosaic & random scale ↑ | Moderate | Upscaled tiny GT land on P2/P3 | Watch label noise with heavy aug |
-
-
-<details>
-  <summary><b>🔧 Reproduce (pseudo-config)</b> — click to expand</summary>
-
-```yaml
-# Detector
-detect_heads: [P2, P3, P4, P5]         # add P2 @ stride 4
-p2_width_channels: 256                  # richer features around P2
-
-# Assigner (TaskAligned)
-assigner:
-  name: TaskAligned
-  topk: 24
-  beta: 5.0
-
-# Box loss weighting
-box_loss:
-  scheme: inverse_area_blend            # blend(score, 1/area)
-  alpha_anneal: true                    # prioritize tiny boxes early
-
-# Auxiliary center loss for small GT
-center_aux:
-  enable_small_only: true
-  weight_schedule: [0.03, 0.01, 35]     # start, end, epochs
-  smallness_threshold: "(24/stride)^2"  # per-anchor definition
-
-# Stability
-stability:
-  iou_clip_schedule: true
-  dfl_clip_schedule: true
-  grad_norm_clip: 5.0
-  dfl:
-    reg_max: 16                         # keep consistent with head
-
-# Classification loss
-cls_loss:
-  type: BCE                             # or Focal: {gamma: 1.5, alpha: 0.25}
-
-# Post-processing
-nms:
-  iou: 0.52
-  conf_offset: +0.02
-
-# Augment & schedule
-augment:
-  random_scale: [0.5, 1.8]
-  mosaic: true
-scheduler:
-  type: cosine
-  final_lr_factor: 0.1                  # lower final LR
-  warmup: longer
+| Aspect             | P2–P5 (yours)                            | P3–P5 (baseline)  | Why it helps / guidance                           | Trade-offs / notes                      |
+| ------------------ | ---------------------------------------- | ----------------- | ------------------------------------------------- | --------------------------------------- |
+| Output strides     | P2 (1/4), P3 (1/8), P4 (1/16), P5 (1/32) | P3–P5 only        | High-res P2 grid covers very small boxes          | More memory/compute; more boxes for NMS |
+| P2 pathway         | Upsample + concat with early C3k2        | —                 | Preserves fine edges/texture lost at downsampling | Ensure BN/act stats are stable          |
+| Head width near P2 | 256-ch Conv/A2C2f                        | Typically 192–256 | Extra capacity for minute cues                    | Slight latency/VRAM increase            |
+| # Detect heads     | 4 (P2–P5)                                | 3 (P3–P5)         | More scale-specialization                         | Heavier training; tune                  |
+| AP\_S (tiny)       | Usually higher                           | Lower             | Denser supervision at small strides               | Potential FP rise in clutter            |
+| Best with          | Small, dense, crowded datasets           | Medium/large objects | Matches receptive field to object size         | Try lower NMS IoU 0.50–0.55            |
+| Aug synergy        | Strong with mosaic & random scale ↑      | Moderate          | Upscaled tiny GT land on P2/P3                    | Watch label noise with heavy aug        |
 
