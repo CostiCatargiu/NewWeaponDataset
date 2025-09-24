@@ -218,3 +218,25 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 | Smallness threshold   | `(24 / stride)^2` (per-anchor)                          | —                  | Targets truly tiny instances                             | Use **per-anchor** threshold; avoid relying only on a global min stride           |
 
 
+## 📊 Comparison Results
+
+### 1) Detection Confidence Interval Stats
+
+| Confidence Interval | Original: Count (Avg Conf) | Custom: Count (Avg Conf) | Winner / Note                         |
+| --- | --- | --- | --- |
+| 0.5–0.6 | 0 (0.000) | 0 (0.000) | Tie |
+| 0.6–0.7 | 600 (0.654) | 480 (0.658) | Original |
+| 0.7–0.8 | 1128 (0.755) | 1155 (0.757) | Custom |
+| 0.8–0.9 | 676 (0.828) | 1243 (0.842) | Custom (more high-conf hits) |
+| 0.9–1.0 | 0 (0.000) | 26 (0.908) | Custom (more high-conf hits) |
+
+---
+
+### 2) Per-Class Detection Statistics
+
+| Class     | Original: Detections (Avg Conf) | Custom: Detections (Avg Conf) | Winner |
+| --- | --- | --- | --- |
+| Knife     | 525 (0.746) | 593 (0.786)  | Custom |
+| Long Gun  | 698 (0.746) | 814 (0.781)  | Custom |
+| No Weapon | 245 (0.731) | 386 (0.740)  | Custom |
+| Pistol    | 936 (0.761) | 1111 (0.787) | Custom |
