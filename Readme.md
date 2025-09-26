@@ -78,7 +78,7 @@ Valid  [██████░░░░░░░░░░░░░░░░░░
 Test   [███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]  4.51% (2,674)
 </pre>
 
-<h4>📊 Class Distribution</h4>
+## 📊 Class Distribution<
 <p align="left" style="margin:0;">
   <img src="https://img.shields.io/badge/knife-13,010_(16.96%25)-A61E4D?style=flat-square&labelColor=111827" alt="knife: 13,010 (16.96%)" />
   <img src="https://img.shields.io/badge/long_gun-22,964_(29.94%25)-7C3AED?style=flat-square&labelColor=111827" alt="long_gun: 22,964 (29.94%)" />
@@ -87,6 +87,7 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 </p>
 
 
+## 📊 Dataset Examples
 
 <table>
   <tr>
