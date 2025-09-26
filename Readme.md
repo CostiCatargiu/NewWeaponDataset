@@ -79,17 +79,16 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 </pre>
 
 <div align="center">
-  <h4>📊 Class Distribution</h4>
-  <p align="left" style="display:inline-block; margin:0;">
-    <img src="https://img.shields.io/badge/knife-13,010_(16.96%25)-A61E4D?style=flat-square&labelColor=111827" alt="knife: 13,010 (16.96%)" style="margin:2px 6px 2px 0;" />
-    <img src="https://img.shields.io/badge/long_gun-22,964_(29.94%25)-7C3AED?style=flat-square&labelColor=111827" alt="long_gun: 22,964 (29.94%)" style="margin:2px 6px 2px 0;" />
-    <img src="https://img.shields.io/badge/no_weapon-12,141_(15.83%25)-6B7280?style=flat-square&labelColor=111827" alt="no_weapon: 12,141 (15.83%)" style="margin:2px 6px 2px 0;" />
-    <img src="https://img.shields.io/badge/pistol-28,590_(37.27%25)-D97706?style=flat-square&labelColor=111827" alt="pistol: 28,590 (37.27%)" style="margin:2px 6px 2px 0;" />
-  </p>
+  <div style="display:inline-block; text-align:left;">
+    <h4 style="margin:0 0 6px 0;">📊 Class Distribution</h4>
+    <p style="margin:0;">
+      <img src="https://img.shields.io/badge/knife-13,010_(16.96%25)-A61E4D?style=flat-square&labelColor=111827" alt="knife: 13,010 (16.96%)" style="margin:2px 6px 2px 0;" />
+      <img src="https://img.shields.io/badge/long_gun-22,964_(29.94%25)-7C3AED?style=flat-square&labelColor=111827" alt="long_gun: 22,964 (29.94%)" style="margin:2px 6px 2px 0;" />
+      <img src="https://img.shields.io/badge/no_weapon-12,141_(15.83%25)-6B7280?style=flat-square&labelColor=111827" alt="no_weapon: 12,141 (15.83%)" style="margin:2px 6px 2px 0;" />
+      <img src="https://img.shields.io/badge/pistol-28,590_(37.27%25)-D97706?style=flat-square&labelColor=111827" alt="pistol: 28,590 (37.27%)" style="margin:2px 6px 2px 0;" />
+    </p>
+  </div>
 </div>
-
-
-
 
 
 <table>
