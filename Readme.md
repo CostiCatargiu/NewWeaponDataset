@@ -83,8 +83,8 @@
   <tr>
     <td><b>📦 Trained results</b></td>
     <td>
-      <a href="https://drive.google.com/drive/folders/1TECu5MI4lv36sJH50WSmS4iBd8SuhYgF?usp=sharing">Google Drive – Trained Results A</a> &nbsp;•&nbsp;
-      <a href="https://drive.google.com/drive/folders/12aaS7CwZfGqb7__BK1UX54j1gQS_DoPi?usp=sharing">Google Drive – Trained Results B</a>
+      <a href="https://drive.google.com/drive/folders/1TECu5MI4lv36sJH50WSmS4iBd8SuhYgF?usp=sharing">Google Drive – Training Results OriginalModel</a> &nbsp;•&nbsp;
+      <a href="https://drive.google.com/drive/folders/12aaS7CwZfGqb7__BK1UX54j1gQS_DoPi?usp=sharing">Google Drive – Training Results CustomModel</a>
     </td>
   </tr>
 </table>
