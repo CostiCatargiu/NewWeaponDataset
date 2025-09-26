@@ -19,20 +19,15 @@
 
   <p>
     <b>Why <code>no_weapon</code>?</b> 🚫🔫
+    
     Explicit negatives teach the model to distinguish real weapons from visually similar items
     (phones, tools, umbrellas, camera rigs), which <b>reduces false positives</b> and improves precision
     in crowded or low-quality footage.
   </p>
 
-  <p>
-    <b>Scale &amp; split.</b> 📊
-    <br><b>59,305 images</b> — Train <b>82.76%</b> (49,079), Valid <b>12.73%</b> (7,552), Test <b>4.51%</b> (2,674).
-    <br><b>Instances:</b> knife 13,010 • long_gun 22,964 • no_weapon 12,141 • pistol 28,590.
-  </p>
 
-  <p>
-    <b>Labels.</b> 🏷️ Standard <b>YOLO</b> bounding-box format for plug-and-play training across YOLO-family detectors.
-  </p>
+
+
 </div>
 
 
