@@ -353,5 +353,50 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 </table>
 
 
+<!-- ===================== Model Comparison ===================== -->
+<div align="left" style="font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', 'Helvetica Neue', Arial; line-height:1.6; font-size:15px;">
+
+  <h3 style="margin:0 0 10px 0;">📈 Model Comparison — Custom vs Original</h3>
+
+  <p style="margin:0 0 12px 0;">
+    Side-by-side evaluation of the <b>custom</b> vs <b>original</b> model using normalized confusion matrices and training curves.
+    The custom model targets small objects and hard negatives (<code>no_weapon</code>).
+  </p>
+
+  <h4 style="margin:14px 0 6px 0;">🔢 Confusion Matrices (Normalized)</h4>
+  <ul style="margin:0 0 10px 18px;">
+    <li><b>Knife</b>: <b>0.88</b> (custom) vs 0.87 (orig) — <span title="+0.01">small gain</span>.</li>
+    <li><b>Long_gun</b>: <b>0.89</b> vs 0.86 — clear gain <b>(+0.03)</b>.</li>
+    <li><b>Pistol</b>: <b>0.91</b> vs 0.89 — clear gain <b>(+0.02)</b>.</li>
+    <li><b>no_weapon</b>: <b>0.61</b> vs 0.53 — biggest improvement <b>(+0.08)</b>, better separation from weapon classes.</li>
+  </ul>
+  <p style="margin:0 0 12px 0;">
+    <i>Note:</i> Both models still show some spill into <b>background</b> (≈0.24–0.29 off-diagonal), which is the main remaining error bucket.
+  </p>
+
+  <h4 style="margin:14px 0 6px 0;">📉 Training Curves</h4>
+  <ul style="margin:0 0 10px 18px;">
+    <li><b>Losses (train/val box, cls, dfl)</b>: custom converges lower and more smoothly after ~epoch 10.</li>
+    <li><b>Precision</b>: both plateau around <b>≈0.86</b>; custom is slightly steadier.</li>
+    <li><b>Recall</b>: both around <b>≈0.75–0.77</b>; custom edges higher and holds late-epoch stability.</li>
+    <li><b>mAP@50 / mAP@50–95</b>: on par or <b>~+1–2 pts</b> for the custom run.</li>
+  </ul>
+
+  <div style="margin:12px 0; padding:10px 12px; border:1px solid #e5e7eb; border-radius:8px;">
+    <b>TL;DR</b> — The <b>custom model</b> is consistently stronger on all weapon classes and
+    <b>notably better</b> at identifying <code>no_weapon</code>, while keeping precision/recall at least as good and driving losses lower.
+    Remaining work: reduce background confusions.
+  </div>
+
+  <h4 style="margin:14px 0 6px 0;">🛠️ Next Steps</h4>
+  <ul style="margin:0 0 0 18px;">
+    <li>Expand/upsample <b>hard negatives</b> (crowds, hands, tools, phones) to push down background/no_weapon mix-ups.</li>
+    <li>Tune <b>class-wise confidence &amp; NMS</b> (slightly higher for pistol/long_gun, slightly lower for no_weapon).</li>
+    <li>Try <b>class-balanced sampling</b> and a short <b>low-LR fine-tune</b> on the latest data mix.</li>
+  </ul>
+
+</div>
+<!-- ============================================================ -->
+
 
 
