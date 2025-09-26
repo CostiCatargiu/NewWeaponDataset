@@ -291,15 +291,5 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
   - **F1:** **0.750 → 0.811** (↑ ~6 pts).
   - **Precision:** **0.925 → 0.897** (↓ ~2.8 pts), **FPs:** **180 → 298** (↑ 118).
 
-### How to read this
-- If **missing small objects is costly** (safety/forensics/surveillance), the **custom model is preferable**: it finds more true positives and produces more high-confidence detections.
-- If your use case is **precision-critical** with few small targets, the **baseline** may remain competitive out-of-the-box.
 
-### Recommended knobs to balance FPs
-- **NMS IoU:** try **0.50–0.55** (especially in dense scenes).
-- **Confidence thresholds:** raise slightly or set **per-class** thresholds.
-- **Assigner sensitivity:** if FPs persist, try `topk=20–24`, `beta≈5`.
-- Keep augmentations reasonable to avoid label noise on tiny objects.
-
-> **Bottom line:** P2–P5 + small-object-aware loss **consistently improves tiny-object recall and F1**. With light post-processing tuning, you can recover much of the precision while keeping the recall gains.
 
