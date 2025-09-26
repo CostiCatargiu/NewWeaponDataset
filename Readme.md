@@ -3,6 +3,8 @@
   <img src="./assets/hero_banner.png" alt="NewWeaponDataset" width="85%">
 </p>
 
+
+
 <h1 align="center">🔫🗡️ NewWeaponDataset</h1>
 <p align="center">
   <em>Public, small-object-focused dataset for multi-class weapon detection (knife, pistol, long_gun) and hard negatives (no_weapon), curated from diverse day/night CCTV & handheld scenes with occlusions and clutter.</em>
