@@ -19,7 +19,6 @@
 
   <p>
     <b>Why <code>no_weapon</code>?</b> 🚫🔫
-    
     Explicit negatives teach the model to distinguish real weapons from visually similar items
     (phones, tools, umbrellas, camera rigs), which <b>reduces false positives</b> and improves precision
     in crowded or low-quality footage.
