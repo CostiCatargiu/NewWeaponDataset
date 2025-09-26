@@ -64,7 +64,7 @@
 
 ---
 
-# 🧪 Split Mix
+### 🧪 Split Mix
 
 <p align="left" style="margin:0;">
   <img src="https://img.shields.io/badge/Train-82.76%25-228be6?style=flat-square&labelColor=111827" alt="Train 82.76%" style="margin:2px 6px 2px 0;" />
