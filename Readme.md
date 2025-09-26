@@ -327,6 +327,30 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 </table>
 
 
+<h4>📈 Model Comparison — Confusion & Training</h4>
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/09326857-5418-4a62-836e-f9ec443327ff" alt="confusion_matrix_custom_model" width="100%" />
+      <br><sub>Confusion Matrix — Custom Model</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/6faf2f7b-6679-4270-a389-0ac0c3e96a78" alt="confusion_matrix_original_model" width="100%" />
+      <br><sub>Confusion Matrix — Original Model</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/74b5d9eb-638f-4360-a07d-d66cab2dfbbb" alt="training_results_custom_model" width="100%" />
+      <br><sub>Training Results — Custom Model</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/d064675b-c23a-4aea-a71a-dfcadb355f8f" alt="training_results_original_model" width="100%" />
+      <br><sub>Training Results — Original Model</sub>
+    </td>
+  </tr>
+</table>
 
 
 
