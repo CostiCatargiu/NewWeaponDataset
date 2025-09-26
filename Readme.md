@@ -78,13 +78,14 @@ Valid  [██████░░░░░░░░░░░░░░░░░░
 Test   [███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]  4.51% (2,674)
 </pre>
 
-<h3 align="center">📊 Class Distribution</h3>
+<h4 align="center">📊 Class Distribution</h4>
 <p align="center">
-  <img src="https://img.shields.io/badge/knife-13,010_(16.96%25)?style=flat&labelColor=111827&color=374151" alt="knife" />
-  <img src="https://img.shields.io/badge/long_gun-22,964_(29.94%25)?style=flat&labelColor=111827&color=4b5563" alt="long_gun" />
-  <img src="https://img.shields.io/badge/no_weapon-12,141_(15.83%25)?style=flat&labelColor=111827&color=6b7280" alt="no_weapon" />
-  <img src="https://img.shields.io/badge/pistol-28,590_(37.27%25)?style=flat&labelColor=111827&color=9ca3af" alt="pistol" />
+  <img src="https://img.shields.io/badge/knife-13,010_(16.96%25)-A61E4D?style=flat-square&labelColor=111827" alt="knife: 13,010 (16.96%)" />
+  <img src="https://img.shields.io/badge/long_gun-22,964_(29.94%25)-7C3AED?style=flat-square&labelColor=111827" alt="long_gun: 22,964 (29.94%)" />
+  <img src="https://img.shields.io/badge/no_weapon-12,141_(15.83%25)-6B7280?style=flat-square&labelColor=111827" alt="no_weapon: 12,141 (15.83%)" />
+  <img src="https://img.shields.io/badge/pistol-28,590_(37.27%25)-D97706?style=flat-square&labelColor=111827" alt="pistol: 28,590 (37.27%)" />
 </p>
+
 
 
 
