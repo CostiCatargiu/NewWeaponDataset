@@ -126,15 +126,7 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
          alt="class_distribution" width="100%">
   </p>
 </details>
-
-
 ---
-
-## 🗂️ Structure & Labels
-
-- **Annotation format:** `class_id x_center y_center width height` (all normalized to `[0,1]`)
-- **Index map:**
-
 
 <div align="center">
 
