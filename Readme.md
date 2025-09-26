@@ -363,13 +363,6 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
     Remaining work: reduce background confusions.
   </div>
 
-  <h4 style="margin:14px 0 6px 0;">🛠️ Next Steps</h4>
-  <ul style="margin:0 0 0 18px;">
-    <li>Expand/upsample <b>hard negatives</b> (crowds, hands, tools, phones) to push down background/no_weapon mix-ups.</li>
-    <li>Tune <b>class-wise confidence &amp; NMS</b> (slightly higher for pistol/long_gun, slightly lower for no_weapon).</li>
-    <li>Try <b>class-balanced sampling</b> and a short <b>low-LR fine-tune</b> on the latest data mix.</li>
-  </ul>
-
 </div>
 <!-- ============================================================ -->
 
