@@ -291,5 +291,80 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
   - **F1:** **0.750 → 0.811** (↑ ~6 pts).
   - **Precision:** **0.925 → 0.897** (↓ ~2.8 pts), **FPs:** **180 → 298** (↑ 118).
 
+<details>
+  <summary>🔍 Detection Examples — click to expand</summary>
+
+  <table>
+    <tr>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/89bc6fd9-a52f-4620-8611-9f63bd392599" alt="7_compare" width="100%" />
+        <br><sub>7_compare</sub>
+      </td>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/c50d8762-7e5f-40c3-9e4e-ad8754f5a5dd" alt="13_compare" width="100%" />
+        <br><sub>13_compare</sub>
+      </td>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/d7f883cb-bb85-4432-ad97-285c2e27ddb8" alt="36_compare" width="100%" />
+        <br><sub>36_compare</sub>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/e2167e20-c0a4-4f4b-8bf9-a8ad4ec9c6fb" alt="68_compare" width="100%" />
+        <br><sub>68_compare</sub>
+      </td>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/a215bab3-9899-4ae2-a6e6-cb5a4e9641a3" alt="127_compare" width="100%" />
+        <br><sub>127_compare</sub>
+      </td>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/cb07b5fc-f636-4d43-b737-d0ea129045cd" alt="128_compare" width="100%" />
+        <br><sub>128_compare</sub>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/24eb0e7d-72d3-4af7-b3fd-9597424a804d" alt="132_compare" width="100%" />
+        <br><sub>132_compare</sub>
+      </td>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/29c1e79b-d06c-427b-b96e-e531b64c3282" alt="151_compare" width="100%" />
+        <br><sub>151_compare</sub>
+      </td>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/743218e8-fbd7-4b1b-8574-8a68bdc7baa1" alt="200_compare" width="100%" />
+        <br><sub>200_compare</sub>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/bdfe84c2-a815-48e9-b0d2-a95208ac5505" alt="306_compare" width="100%" />
+        <br><sub>306_compare</sub>
+      </td>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/1c40f69d-78a6-4aed-8cdc-4fa1cf0ba8a9" alt="560_compare" width="100%" />
+        <br><sub>560_compare</sub>
+      </td>
+      <td align="center" width="33%">
+        <img src="https://github.com/user-attachments/assets/3b4a5d00-ce5a-49e9-a2d1-8b4b54790740" alt="873_compare" width="100%" />
+        <br><sub>873_compare</sub>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="center" colspan="3">
+        <img src="https://github.com/user-attachments/assets/bc057716-be5d-42fa-a9a5-addd65926797" alt="1894_compare" width="66%" />
+        <br><sub>1894_compare</sub>
+      </td>
+    </tr>
+  </table>
+</details>
+
+
+
 
 
