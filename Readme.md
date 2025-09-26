@@ -3,12 +3,11 @@
   <img src="./assets/hero_banner.png" alt="NewWeaponDataset" width="85%">
 </p>
 
-![test1gun](https://github.com/user-attachments/assets/0754c712-7237-44ff-b93b-e7b061b34bcd)
-
-![test2gun](https://github.com/user-attachments/assets/07c743cf-aff7-4231-9f3a-88f1612b5ee9)
-
-![test3gun](https://github.com/user-attachments/assets/919c529b-797b-4124-9ffd-931b765fd53a)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0754c712-7237-44ff-b93b-e7b061b34bcd" alt="test1gun" width="30%">
+  <img src="https://github.com/user-attachments/assets/07c743cf-aff7-4231-9f3a-88f1612b5ee9" alt="test2gun" width="30%">
+  <img src="https://github.com/user-attachments/assets/919c529b-797b-4124-9ffd-931b765fd53a" alt="test3gun" width="30%">
+</p>
 
 <h1 align="center">🔫🗡️ NewWeaponDataset</h1>
 <p align="center">
