@@ -149,7 +149,7 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 
 <div align="center">
 
-# 🔎 YOLOv12s — Small-Object Focused Variant (P2–P5 + loss tweaks)
+## 🔎 YOLOv12s — Small-Object Focused Variant (P2–P5 + loss tweaks)
 
 <sub><em>A compact introduction to what changed, why we changed it, and how it helps tiny objects.</em></sub>
 
