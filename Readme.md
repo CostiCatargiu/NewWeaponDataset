@@ -50,6 +50,7 @@
 
 
 ## ⚡ At a Glance
+## ⚡ At a Glance
 
 <table>
   <tr>
@@ -79,7 +80,15 @@
       <a href="https://app.roboflow.com/gundetectiondataset/weapondataset-oi2g3/8">Roboflow App: WeaponDataset v8</a>
     </td>
   </tr>
+  <tr>
+    <td><b>📦 Trained results</b></td>
+    <td>
+      <a href="https://drive.google.com/drive/folders/1TECu5MI4lv36sJH50WSmS4iBd8SuhYgF?usp=sharing">Google Drive – Trained Results A</a> &nbsp;•&nbsp;
+      <a href="https://drive.google.com/drive/folders/12aaS7CwZfGqb7__BK1UX54j1gQS_DoPi?usp=sharing">Google Drive – Trained Results B</a>
+    </td>
+  </tr>
 </table>
+
 
 ---
 
