@@ -79,19 +79,12 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
 </pre>
 
 ---
-
-## 🎯 Class Mix (All Splits)
-
 <h3 align="center">📊 Class Distribution</h3>
 <p align="center">
-  <img src="https://img.shields.io/badge/knife-13,010_(16.96%25)-e74c3c?style=for-the-badge"
-       alt="knife: 13,010 (16.96%)" style="margin:4px" />
-  <img src="https://img.shields.io/badge/long_gun-22,964_(29.94%25)-8e44ad?style=for-the-badge"
-       alt="long_gun: 22,964 (29.94%)" style="margin:4px" />
-  <img src="https://img.shields.io/badge/no_weapon-12,141_(15.83%25)-95a5a6?style=for-the-badge"
-       alt="no_weapon: 12,141 (15.83%)" style="margin:4px" />
-  <img src="https://img.shields.io/badge/pistol-28,590_(37.27%25)-f1c40f?style=for-the-badge"
-       alt="pistol: 28,590 (37.27%)" style="margin:4px" />
+  <img src="https://img.shields.io/badge/knife-13,010_(16.96%25)?style=flat-square&labelColor=111827&color=dc2626" alt="knife: 13,010 (16.96%)" />
+  <img src="https://img.shields.io/badge/long_gun-22,964_(29.94%25)?style=flat-square&labelColor=111827&color=6d28d9" alt="long_gun: 22,964 (29.94%)" />
+  <img src="https://img.shields.io/badge/no_weapon-12,141_(15.83%25)?style=flat-square&labelColor=111827&color=4b5563" alt="no_weapon: 12,141 (15.83%)" />
+  <img src="https://img.shields.io/badge/pistol-28,590_(37.27%25)?style=flat-square&labelColor=111827&color=d97706" alt="pistol: 28,590 (37.27%)" />
 </p>
 
 
