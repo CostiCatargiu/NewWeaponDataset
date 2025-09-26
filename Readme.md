@@ -7,9 +7,34 @@
 </p>
 
 <h1 align="center">🔫🗡️ NewWeaponDataset</h1>
-<p align="center">
-  <em>Public, small-object-focused dataset for multi-class weapon detection (knife, pistol, long_gun) and hard negatives (no_weapon), curated from diverse day/night CCTV & handheld scenes with occlusions and clutter.</em>
-</p>
+<div align="left" style="font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', 'Helvetica Neue', Arial; font-size: 15px; line-height: 1.6;">
+  <h3 style="margin:0 0 8px 0;">🧩 Small-Object Weapon Detection Dataset</h3>
+  <p>
+    Public, small-object-focused dataset for multi-class weapon detection covering
+    <b>knife</b>, <b>pistol</b>, <b>long_gun</b>, and a <b>no_weapon</b> hard-negative class.
+    Sourced from <b>≈1,200 YouTube videos</b> 🎥; representative frames were extracted to capture a wide variety of
+    <b>resolutions</b>, <b>aspect ratios</b>, and <b>scene types</b> (🌞 day / 🌙 night, CCTV and handheld).
+    Scenes include <b>occlusions</b>, <b>motion blur</b>, and <b>cluttered backgrounds</b> to stress-test tiny targets 🔎.
+  </p>
+
+  <p>
+    <b>Why <code>no_weapon</code>?</b> 🚫🔫
+    Explicit negatives teach the model to distinguish real weapons from visually similar items
+    (phones, tools, umbrellas, camera rigs), which <b>reduces false positives</b> and improves precision
+    in crowded or low-quality footage.
+  </p>
+
+  <p>
+    <b>Scale &amp; split.</b> 📊
+    <br><b>59,305 images</b> — Train <b>82.76%</b> (49,079), Valid <b>12.73%</b> (7,552), Test <b>4.51%</b> (2,674).
+    <br><b>Instances:</b> knife 13,010 • long_gun 22,964 • no_weapon 12,141 • pistol 28,590.
+  </p>
+
+  <p>
+    <b>Labels.</b> 🏷️ Standard <b>YOLO</b> bounding-box format for plug-and-play training across YOLO-family detectors.
+  </p>
+</div>
+
 
 <p align="center">
   <a href="https://universe.roboflow.com/gundetectiondataset/nogun/dataset/2">
