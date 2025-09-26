@@ -89,26 +89,23 @@ Test   [███░░░░░░░░░░░░░░░░░░░░░
   <img src="https://img.shields.io/badge/pistol-28,590_(37.27%25)-f1c40f?style=for-the-badge" />
 </p>
 
-<details>
-  <summary>📷 Dataset examples — click to expand</summary>
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="https://github.com/user-attachments/assets/af5b7f23-f809-404d-8da0-17ddc436f894" alt="Example 1" width="100%" />
+      <br><sub>Example 1</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://github.com/user-attachments/assets/b0805ccc-09e6-4167-abcb-35a583532762" alt="Example 2" width="100%" />
+      <br><sub>Example 2</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://github.com/user-attachments/assets/dbab2e81-8b7b-45b4-be47-50eb64689d9d" alt="Example 3" width="100%" />
+      <br><sub>Example 3</sub>
+    </td>
+  </tr>
+</table>
 
-  <table>
-    <tr>
-      <td align="center">
-        <img src="https://github.com/user-attachments/assets/af5b7f23-f809-404d-8da0-17ddc436f894" alt="Example 1" width="100%" />
-        <br><sub>Example 1</sub>
-      </td>
-      <td align="center">
-        <img src="https://github.com/user-attachments/assets/b0805ccc-09e6-4167-abcb-35a583532762" alt="Example 2" width="100%" />
-        <br><sub>Example 2</sub>
-      </td>
-      <td align="center">
-        <img src="https://github.com/user-attachments/assets/dbab2e81-8b7b-45b4-be47-50eb64689d9d" alt="Example 3" width="100%" />
-        <br><sub>Example 3</sub>
-      </td>
-    </tr>
-  </table>
-</details>
 
 
 
