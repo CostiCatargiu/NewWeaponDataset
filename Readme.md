@@ -66,10 +66,10 @@
 
 ## 🧪 Split Mix
 
-<p>
-  <img src="https://img.shields.io/badge/Train-82.76%25-228be6?style=flat-square" />
-  <img src="https://img.shields.io/badge/Valid-12.73%25-845ef7?style=flat-square" />
-  <img src="https://img.shields.io/badge/Test-4.51%25-15aabf?style=flat-square" />
+<p align="left" style="margin:0;">
+  <img src="https://img.shields.io/badge/Train-82.76%25-228be6?style=flat-square&labelColor=111827" alt="Train 82.76%" style="margin:2px 6px 2px 0;" />
+  <img src="https://img.shields.io/badge/Valid-12.73%25-845ef7?style=flat-square&labelColor=111827" alt="Valid 12.73%" style="margin:2px 6px 2px 0;" />
+  <img src="https://img.shields.io/badge/Test-4.51%25-15aabf?style=flat-square&labelColor=111827" alt="Test 4.51%" style="margin:2px 6px 2px 0;" />
 </p>
 
 <pre>
