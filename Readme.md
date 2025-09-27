@@ -116,13 +116,6 @@ Valid  [██████░░░░░░░░░░░░░░░░░░
 Test   [███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]  4.51% (2,674)
 </pre>
 
-### 📊 Class Distribution
-<p align="left" style="margin:0;">
-  <img src="https://img.shields.io/badge/knife-13,010_(16.96%25)-A61E4D?style=flat-square&labelColor=111827" alt="knife: 13,010 (16.96%)" />
-  <img src="https://img.shields.io/badge/long_gun-22,964_(29.94%25)-7C3AED?style=flat-square&labelColor=111827" alt="long_gun: 22,964 (29.94%)" />
-  <img src="https://img.shields.io/badge/no_weapon-12,141_(15.83%25)-6B7280?style=flat-square&labelColor=111827" alt="no_weapon: 12,141 (15.83%)" />
-  <img src="https://img.shields.io/badge/pistol-28,590_(37.27%25)-D97706?style=flat-square&labelColor=111827" alt="pistol: 28,590 (37.27%)" />
-</p>
 
 
 ### 📊 Dataset Examples
