@@ -101,6 +101,35 @@
 | **Total** | **59,305** | **100%** | **76,705** | **13,010 (16.96%)** | **22,964 (29.94%)** | **12,141 (15.83%)** | **28,590 (37.27%)** |
 
 
+## 📊 Annotation Size Analysis
+
+To better understand the dataset, we analyzed the **normalized bounding box areas** (`w × h` in YOLO format).  
+Objects were categorized into three size groups:
+
+- **Small:** area ≤ `0.02`  
+- **Medium:** `0.02 < area ≤ 0.20`  
+- **Large:** area > `0.20`  
+
+This helps evaluate dataset balance and emphasizes the role of **small-object detection**, which is often the most challenging.
+
+### 🔎 Results by Dataset Split
+
+| Split   | Total Boxes | Small  | Medium | Large  | % Small | % Medium | % Large |
+|---------|-------------|--------|--------|--------|---------|----------|---------|
+| **Train** | 63,452      | 15,548 | 33,032 | 14,872 | 24.5%   | 52.1%    | 23.4%   |
+| **Valid** | 9,730       | 2,821  | 5,135  | 1,774  | 29.0%   | 52.8%    | 18.2%   |
+| **Test**  | 3,523       |   966  | 1,869  |   688  | 27.4%   | 53.1%    | 19.5%   |
+| **TOTAL** | 76,705      | 19,335 | 40,036 | 17,334 | 25.2%   | 52.2%    | 22.6%   |
+
+---
+
+### 📌 Observations
+- **Medium-sized objects dominate** across all splits (~52%).  
+- **Small objects make up ~25%** of the dataset, ensuring sufficient representation for small-object detection.  
+- **Large objects are less frequent** (~22%) but remain important for scale robustness.  
+- Proportions are **consistent across train/valid/test**, indicating a balanced dataset.  
+
+
 
 ### 🧪 Split Mix
 
