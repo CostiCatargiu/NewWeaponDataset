@@ -131,7 +131,7 @@ This helps evaluate dataset balance and emphasizes the role of **small-object de
 
 
 
-## 🔳 Size Previews (Mosaics)
+### 🔳 Size Previews - Large, Medium, Small
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/2f4dd189-1ba0-4340-a101-2c55e42b27e5" alt="mosaic_small" width="30%"> 
