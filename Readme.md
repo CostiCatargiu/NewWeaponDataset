@@ -130,6 +130,14 @@ This helps evaluate dataset balance and emphasizes the role of **small-object de
 - Proportions are **consistent across train/valid/test**, indicating a balanced dataset.  
 
 
+## 🔳 Size Previews (Mosaics)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2f4dd189-1ba0-4340-a101-2c55e42b27e5" alt="mosaic_small" width="30%">
+  <img src="https://github.com/user-attachments/assets/727e3de5-209c-4698-a6f0-bf717d19d22a" alt="mosaic_medium" width="30%">
+  <img src="https://github.com/user-attachments/assets/8f45f604-baac-4d59-bfcf-20da3475eed3" alt="mosaic_large" width="30%">
+</p>
+
 
 ### 🧪 Split Mix
 
